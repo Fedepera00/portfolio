@@ -1,13 +1,12 @@
-/* Stili per la sezione "Chi Sono" già esistenti */
 .about-container {
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 
   .about-content {
     max-width: 1000px;
     display: flex;
-    flex-direction: row;
     gap: 2rem;
     align-items: center;
     flex-wrap: wrap;
@@ -36,7 +35,6 @@
         }
       }
     }
-
     .about-image {
       flex: 1;
       text-align: center;
@@ -49,23 +47,20 @@
   }
 }
 
-/* Stili per la timeline delle esperienze */
 .experience {
   margin-top: 3rem;
   padding: 2rem;
+  text-align: center;
 
   h2 {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
-    text-align: center;
   }
 
   .timeline {
     position: relative;
     padding: 2rem 0;
-
-    /* Linea verticale centrale */
     &::before {
       content: "";
       position: absolute;
@@ -76,7 +71,6 @@
       background: var(--secondary-color);
       transform: translateX(-50%);
     }
-
     .timeline-item {
       position: relative;
       width: 45%;
@@ -85,15 +79,12 @@
       border-radius: 8px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
       margin-bottom: 2rem;
-
-      /* Allinea a sinistra per gli elementi dispari, a destra per quelli pari */
       &:nth-child(odd) {
         left: 0;
       }
       &:nth-child(even) {
         left: 55%;
       }
-
       .timeline-date {
         font-size: 0.9rem;
         font-weight: bold;
@@ -104,16 +95,15 @@
   }
 }
 
-/* Responsive: su schermi piccoli la timeline si adatta a un'unica colonna */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
   }
-  .experience .timeline-item {
+  .timeline .timeline-item {
     width: 100%;
     left: 0 !important;
   }
-  .experience .timeline::before {
+  .timeline::before {
     left: 8px;
   }
 }
