@@ -1,0 +1,119 @@
+/* Stili per la sezione "Chi Sono" già esistenti */
+.about-container {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+
+  .about-content {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .about-text {
+      flex: 1;
+      h2 {
+        font-size: 2.2rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+      p {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+      .btn-cv {
+        background: var(--gradient-bg);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        border-radius: 2rem;
+        font-weight: bold;
+        transition: background 0.3s;
+        &:hover {
+          background: #1a2e5a;
+        }
+      }
+    }
+
+    .about-image {
+      flex: 1;
+      text-align: center;
+      img {
+        max-width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+/* Stili per la timeline delle esperienze */
+.experience {
+  margin-top: 3rem;
+  padding: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+
+    /* Linea verticale centrale */
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--secondary-color);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 45%;
+      padding: 1rem 2rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+
+      /* Allinea a sinistra per gli elementi dispari, a destra per quelli pari */
+      &:nth-child(odd) {
+        left: 0;
+      }
+      &:nth-child(even) {
+        left: 55%;
+      }
+
+      .timeline-date {
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--secondary-color);
+      }
+    }
+  }
+}
+
+/* Responsive: su schermi piccoli la timeline si adatta a un'unica colonna */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  .experience .timeline-item {
+    width: 100%;
+    left: 0 !important;
+  }
+  .experience .timeline::before {
+    left: 8px;
+  }
+}
