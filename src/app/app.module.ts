@@ -10,6 +10,7 @@ import { CompetenzeComponent } from './pages/competenze/competenze.component';
 import { ContattiComponent } from './pages/contatti/contatti.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ChiSonoComponent } from './pages/chi-sono/chi-sono.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     CompetenzeComponent,
     ContattiComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ChiSonoComponent
   ],
   imports: [
     BrowserModule,

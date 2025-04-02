@@ -1,0 +1,30 @@
+nav.navbar {
+  background: var(--gradient-bg);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-light);
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+
+    li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #ffc107;
+      }
+    }
+  }
+}
