@@ -1,7 +1,11 @@
-<section class="hero" data-aos="fade-in">
+<section class="hero" *ngIf="isHomePage">
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="DEMO PREVIEW.mp4" type="video/mp4" />
+    Il tuo browser non supporta i video HTML5.
+  </video>
   <div class="hero-overlay"></div>
-  <div class="hero-content" data-aos="slide-up">
-    <h1 class="typing">Benvenuto nel mio Portfolio</h1>
+  <div class="hero-content">
+    <h1><span class="typing">Benvenuto nel mio Portfolio</span></h1>
     <p>Sviluppo soluzioni digitali innovative e responsive</p>
     <a routerLink="/portfolio" class="cta-btn">Scopri i miei Progetti</a>
   </div>

@@ -1,27 +1,60 @@
 .hero {
   position: relative;
   height: 100vh;
-  background: url("/assets/landing-bg.jpg") no-repeat center center / cover;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
 
-  .hero-overlay {
+  .hero::before {
+    content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+    z-index: 3;
+  }
+  .bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    animation: zoomIn 60s ease-in-out infinite alternate;
+  }
+
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/grain.gif"); // Aggiungi un GIF di grana
+    opacity: 0.08;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
     mix-blend-mode: overlay;
   }
 
   .hero-content {
     position: relative;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    padding: 2.5rem;
+    border-radius: 20px;
     text-align: center;
     color: var(--text-light);
-    z-index: 2;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    max-width: 90%;
 
     h1 {
       font-size: 3.5rem;
@@ -32,16 +65,21 @@
     p {
       font-size: 1.5rem;
       margin-bottom: 2rem;
-      animation: fadeInUp 1.5s ease forwards;
+      animation: fadeLetters 3s ease forwards;
     }
+
     .typing {
+      display: inline-block;
       overflow: hidden;
       white-space: nowrap;
-      width: 0;
-      border-right: 2px solid var(--text-light); // cursore
+      border-right: 2px solid var(--text-light);
+      max-width: 100%;
+      font-size: inherit;
+
       animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite,
-        remove-cursor 0s ease 3s forwards; // ⬅️ qui
+        remove-cursor 0s ease 3s forwards;
     }
+
     .cta-btn {
       padding: 1rem 2rem;
       background: var(--bg-gradient);
@@ -53,15 +91,15 @@
       transition: background 0.3s ease;
       animation: fadeIn 2s ease forwards;
 
+      animation: fadeIn 2s ease forwards, pulse 3s infinite ease-in-out;
+
       &:hover {
-        background: var(--accent-color);
-        color: var(--text-dark);
+        animation: none;
       }
     }
   }
 }
 
-// 🌟 Animazioni di entrata semplici (puoi rimuoverle se usi AOS)
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -92,39 +130,72 @@
     transform: translateY(0);
   }
 }
+
 @keyframes typing {
   from {
     width: 0;
   }
   to {
-    width: 29ch; // Adatta questo valore alla lunghezza del tuo testo
+    width: 100%; // 💥 Non usare ch, usa % per non tagliare nulla
   }
 }
-
 @keyframes blink {
   50% {
     border-color: transparent;
   }
 }
+
 @keyframes remove-cursor {
   to {
     border-right: none;
   }
 }
 
+@keyframes fadeLetters {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    letter-spacing: -0.5px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: normal;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
 @media (max-width: 768px) {
   .hero-content {
+    padding: 2rem;
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .cta-btn {
       font-size: 1rem;
-      padding: 0.8rem 1.5rem;
+      padding: 0.8rem 1.4rem;
     }
+  }
+
+  .typing {
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    animation: typing 3s steps(35, end) forwards, blink 0.7s step-end infinite,
+      remove-cursor 0s ease 3s forwards;
   }
 }
