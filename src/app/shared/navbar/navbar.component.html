@@ -1,23 +1,20 @@
 <nav [ngClass]="{ scrolled: isScrolled }">
-  <div class="container">
-    <div class="logo">Federico Peralta</div>
-    <ul class="nav-links">
-      <li>
-        <a
-          routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          >Home</a
-        >
-      </li>
-      <li><a routerLink="/chi-sono" routerLinkActive="active">Chi Sono</a></li>
-      <li>
-        <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-      </li>
-      <li>
-        <a routerLink="/competenze" routerLinkActive="active">Competenze</a>
-      </li>
-      <li><a routerLink="/contatti" routerLinkActive="active">Contatti</a></li>
-    </ul>
-  </div>
+  <div class="logo">Federico Peralta</div>
+  <button class="nav-toggle" (click)="toggleMenu()">☰</button>
+  <ul class="nav-links" [ngClass]="{ open: isMenuOpen }">
+    <li>
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+    </li>
+    <li><a routerLink="/chi-sono" routerLinkActive="active">Chi Sono</a></li>
+    <li><a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
+    <li>
+      <a routerLink="/competenze" routerLinkActive="active">Competenze</a>
+    </li>
+    <li><a routerLink="/contatti" routerLinkActive="active">Contatti</a></li>
+  </ul>
 </nav>

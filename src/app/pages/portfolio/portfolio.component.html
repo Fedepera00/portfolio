@@ -1,22 +1,24 @@
 <section class="portfolio" data-aos="fade-up">
-  <h2>Portfolio</h2>
-  <div class="filter-tabs">
-    <button class="active">Tutti</button>
-    <button>Siti Web</button>
-    <button>App</button>
-    <button>UI/UX</button>
-  </div>
-  <div class="portfolio-grid">
-    <div class="portfolio-card" *ngFor="let progetto of progetti">
-      <div class="card-image">
-        <img [src]="progetto.imgUrl" [alt]="progetto.titolo" />
-      </div>
-      <div class="card-overlay">
-        <h3>{{ progetto.titolo }}</h3>
-        <p>{{ progetto.descrizione }}</p>
-        <div class="card-links">
-          <a [href]="progetto.demo" target="_blank">Demo</a>
-          <a [href]="progetto.github" target="_blank">GitHub</a>
+  <div class="container">
+    <h2>Portfolio</h2>
+    <div class="filter-tabs">
+      <button class="active">Tutti</button>
+      <button>Siti Web</button>
+      <button>App</button>
+      <button>UI/UX</button>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card" *ngFor="let progetto of progetti">
+        <div class="card-image">
+          <img [src]="progetto.imgUrl" [alt]="progetto.titolo" />
+        </div>
+        <div class="card-overlay">
+          <h3>{{ progetto.titolo }}</h3>
+          <p>{{ progetto.descrizione }}</p>
+          <div class="card-links">
+            <a [href]="progetto.demo" target="_blank">Demo</a>
+            <a [href]="progetto.github" target="_blank">GitHub</a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,10 +1,11 @@
 .hero {
   position: relative;
   height: 100vh;
-  background: url("/assets/landing-bg.jpg") no-repeat center center/cover; // Sostituisci con il tuo background
+  background: url("/assets/landing-bg.jpg") no-repeat center center / cover;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 
   .hero-overlay {
     position: absolute;
@@ -20,16 +21,20 @@
     position: relative;
     text-align: center;
     color: var(--text-light);
-    padding: 0 1rem;
+    z-index: 2;
 
     h1 {
       font-size: 3.5rem;
       margin-bottom: 1rem;
+      animation: fadeInDown 1s ease forwards;
     }
+
     p {
       font-size: 1.5rem;
       margin-bottom: 2rem;
+      animation: fadeInUp 1.5s ease forwards;
     }
+
     .cta-btn {
       padding: 1rem 2rem;
       background: var(--bg-gradient);
@@ -39,9 +44,61 @@
       border-radius: 50px;
       cursor: pointer;
       transition: background 0.3s ease;
+      animation: fadeIn 2s ease forwards;
+
       &:hover {
         background: var(--accent-color);
+        color: var(--text-dark);
       }
+    }
+  }
+}
+
+// 🌟 Animazioni di entrata semplici (puoi rimuoverle se usi AOS)
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .cta-btn {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
     }
   }
 }

@@ -2,20 +2,18 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1rem 2rem;
   z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  background: transparent;
+  padding: 1rem 2rem;
+  background: rgba(30, 60, 114, 0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
 
   &.scrolled {
-    background: var(--primary-color);
+    background: #1e3c72;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .logo {
@@ -24,20 +22,78 @@ nav {
     color: var(--text-light);
   }
 
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-light);
+    cursor: pointer;
+  }
+
   .nav-links {
-    list-style: none;
     display: flex;
     gap: 1.5rem;
+    list-style: none;
+
     li a {
       font-weight: 600;
       color: var(--text-light);
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      &:hover,
-      &.active {
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      transition: background 0.3s;
+
+      &.active,
+      &:hover {
         background: var(--accent-color);
         color: var(--primary-color);
       }
     }
   }
+
+  // MOBILE MENU
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      background: #1e3c72;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 2rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+
+      li {
+        width: 100%;
+        margin-bottom: 1rem;
+
+        a {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    .nav-links.open {
+      max-height: 300px; // o più se hai più link
+    }
+  }
+}
+
+// FACOLTATIVO: transizione icona burger
+.burger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }

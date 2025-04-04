@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-
+import { ChiSonoComponent } from './pages/chi-sono/chi-sono.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { CompetenzeComponent } from './pages/competenze/competenze.component';
 import { ContattiComponent } from './pages/contatti/contatti.component';
-import { ChiSonoComponent } from './pages/chi-sono/chi-sono.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

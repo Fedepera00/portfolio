@@ -1,40 +1,42 @@
 <section class="contact" data-aos="fade-up">
-  <h2>Contatti</h2>
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="nome">Nome</label>
-      <input
-        type="text"
-        id="nome"
-        placeholder="Inserisci il tuo nome"
-        formControlName="nome"
-        required
-      />
+  <div class="container">
+    <h2>Contatti</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          id="nome"
+          placeholder="Inserisci il tuo nome"
+          formControlName="nome"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Inserisci la tua email"
+          formControlName="email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="messaggio">Messaggio</label>
+        <textarea
+          id="messaggio"
+          rows="5"
+          placeholder="Scrivi il tuo messaggio"
+          formControlName="messaggio"
+          required
+        ></textarea>
+      </div>
+      <button type="submit">Invia</button>
+    </form>
+    <div class="social">
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank">GitHub</a>
     </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="Inserisci la tua email"
-        formControlName="email"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <label for="messaggio">Messaggio</label>
-      <textarea
-        id="messaggio"
-        rows="5"
-        placeholder="Scrivi il tuo messaggio"
-        formControlName="messaggio"
-        required
-      ></textarea>
-    </div>
-    <button type="submit">Invia</button>
-  </form>
-  <div class="social">
-    <a href="#" target="_blank">LinkedIn</a>
-    <a href="#" target="_blank">GitHub</a>
   </div>
 </section>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 :root {
-  /* Variabili colore */
+  // 🎨 Palette ispirata al sito di Adriana
   --primary-color: #1e3c72;
   --secondary-color: #2a5298;
   --accent-color: #ffc107;
@@ -15,23 +15,47 @@
   --body-bg: #f7f9fc;
 }
 
-/* Reset base e tipografia */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html,
 body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   font-family: "Inter", sans-serif;
   background-color: var(--body-bg);
   color: var(--text-dark);
   line-height: 1.6;
 }
 
-/* Aggiungiamo transizioni globali */
+app-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+router-outlet + * {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
 a {
   text-decoration: none;
   color: inherit;
   transition: color 0.3s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }

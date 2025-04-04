@@ -1,9 +1,7 @@
 .about {
-  padding: 4rem 2rem;
+  padding: 4rem 0;
   background: #fff;
   .about-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -15,6 +13,7 @@
       font-size: 2.8rem;
       color: var(--primary-color);
       margin-bottom: 1rem;
+      padding-top: 80px;
     }
     p {
       font-size: 1.2rem;
@@ -44,7 +43,7 @@
 }
 
 .experience {
-  padding: 4rem 2rem;
+  padding: 4rem 0;
   background: var(--body-bg);
   text-align: center;
   h2 {
@@ -54,8 +53,8 @@
   }
   .timeline {
     position: relative;
-    max-width: 1000px;
     margin: 0 auto;
+    max-width: 1000px;
     &::before {
       content: "";
       position: absolute;
@@ -97,7 +96,6 @@
   }
 }
 
-/* Responsive per timeline */
 @media (max-width: 768px) {
   .about-wrapper {
     flex-direction: column;

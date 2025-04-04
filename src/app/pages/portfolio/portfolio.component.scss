@@ -1,58 +1,71 @@
 .portfolio {
-  padding: 6rem 2rem;
+  padding: 6rem 0;
+  background: #ffffff;
   text-align: center;
-  background: #fff;
+
   h2 {
     font-size: 2.8rem;
-    color: var(--primary-color);
+    color: #1e3c72; // ex: var(--primary-color)
     margin-bottom: 2rem;
+    padding-top: 80px;
   }
+
   .filter-tabs {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
+
+    $secondary-color: #2a5298;
+    $primary-color: #1e3c72;
+
     button {
-      background: var(--secondary-color);
-      color: var(--text-light);
+      background: $secondary-color;
+      color: #fff;
       border: none;
       padding: 0.5rem 1rem;
       border-radius: 30px;
       cursor: pointer;
       transition: background 0.3s;
-      &:hover,
-      &.active {
-        background: var(--primary-color);
+
+      &.active,
+      &:hover {
+        background: $primary-color;
       }
     }
   }
+
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
   }
+
   .portfolio-card {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
+
     .card-image img {
       width: 100%;
       display: block;
     }
+
     .card-overlay {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(30, 60, 114, 0.85);
-      color: var(--text-light);
+      background: rgba(30, 60, 114, 0.85); // blu scuro semitrasparente
+      color: #fff;
       opacity: 0;
       transition: opacity 0.3s ease;
       padding: 1rem;
@@ -61,27 +74,39 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+
       h3 {
         font-size: 1.8rem;
         margin-bottom: 0.5rem;
       }
+
       p {
         font-size: 1rem;
         margin-bottom: 1rem;
       }
-      .card-links a {
-        margin: 0 0.5rem;
-        padding: 0.5rem 1rem;
-        background: var(--accent-color);
-        color: var(--primary-color);
-        border-radius: 30px;
-        font-weight: 600;
-        transition: background 0.3s;
-        &:hover {
-          background: darken(var(--accent-color), 5%);
+
+      .card-links {
+        display: flex;
+        gap: 0.5rem;
+
+        $accent-color: #ffc107;
+
+        a {
+          padding: 0.5rem 1rem;
+          background: $accent-color;
+          color: #1e3c72;
+          border-radius: 30px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: background 0.3s;
+
+          &:hover {
+            background: darken($accent-color, 8%);
+          }
         }
       }
     }
+
     &:hover .card-overlay {
       opacity: 1;
     }
