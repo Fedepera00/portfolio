@@ -9,7 +9,7 @@ import { ChiSonoComponent } from './pages/chi-sono/chi-sono.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'chi-siamo', component: ChiSonoComponent },
+  { path: 'chi-sono', component: ChiSonoComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'competenze', component: CompetenzeComponent },
   { path: 'contatti', component: ContattiComponent },

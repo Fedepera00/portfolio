@@ -13,6 +13,7 @@ import { ContattiComponent } from './pages/contatti/contatti.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ChiSonoComponent } from './pages/chi-sono/chi-sono.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ChiSonoComponent } from './pages/chi-sono/chi-sono.component';
     FooterComponent,
     ChiSonoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
