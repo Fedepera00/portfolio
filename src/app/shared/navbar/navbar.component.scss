@@ -3,36 +3,40 @@ nav {
   top: 0;
   width: 100%;
   padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
 
   &.scrolled {
     background: var(--primary-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   }
 
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .logo {
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--text-light);
   }
 
-  ul {
+  .nav-links {
+    list-style: none;
     display: flex;
     gap: 1.5rem;
-    list-style: none;
-
     li a {
+      font-weight: 600;
       color: var(--text-light);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
       &:hover,
       &.active {
-        color: #ffc107;
+        background: var(--accent-color);
+        color: var(--primary-color);
       }
     }
   }

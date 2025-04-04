@@ -1,4 +1,3 @@
-// portfolio.component.ts
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent implements OnInit {
-  // Definisci qui l'array "progetti"
   progetti = [
     {
       titolo: 'Progetto 1',
@@ -23,7 +21,21 @@ export class PortfolioComponent implements OnInit {
       demo: 'https://demo-progetto2.it',
       github: 'https://github.com/utente/progetto2',
     },
-    // ... Aggiungi altri progetti
+    {
+      titolo: 'Progetto 3',
+      imgUrl: 'https://via.placeholder.com/400x300',
+      descrizione: 'Descrizione del secondo progetto',
+      demo: 'https://demo-progetto2.it',
+      github: 'https://github.com/utente/progetto2',
+    },
+    {
+      titolo: 'Progetto 4',
+      imgUrl: 'https://via.placeholder.com/400x300',
+      descrizione: 'Descrizione del secondo progetto',
+      demo: 'https://demo-progetto2.it',
+      github: 'https://github.com/utente/progetto2',
+    },
+    // Aggiungi altri progetti se necessario
   ];
 
   constructor() {}

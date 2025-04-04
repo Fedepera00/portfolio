@@ -1,26 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Century+Gothic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 :root {
+  /* Variabili colore */
   --primary-color: #1e3c72;
   --secondary-color: #2a5298;
-  --gradient-bg: linear-gradient(
+  --accent-color: #ffc107;
+  --bg-gradient: linear-gradient(
     135deg,
     var(--primary-color),
     var(--secondary-color)
   );
   --text-light: #ffffff;
-  --text-dark: #1a1a1a;
+  --text-dark: #333333;
+  --body-bg: #f7f9fc;
 }
 
+/* Reset base e tipografia */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Century Gothic", sans-serif;
 }
 
 body {
-  background: #f5f7fa;
+  font-family: "Inter", sans-serif;
+  background-color: var(--body-bg);
   color: var(--text-dark);
   line-height: 1.6;
+}
+
+/* Aggiungiamo transizioni globali */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
 }

@@ -5,15 +5,15 @@
   text-align: center;
 
   h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
   }
 
   .skills-track {
     display: flex;
-    width: calc(200%); // Duplica il contenuto per creare un effetto loop
-    animation: scroll 30s linear infinite;
+    width: calc(200%);
+    animation: scroll 25s linear infinite;
   }
 
   .skill-item {
