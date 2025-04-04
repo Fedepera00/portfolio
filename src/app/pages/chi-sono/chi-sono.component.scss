@@ -1,24 +1,38 @@
+// ✅ CHI SONO CON EFFETTO TYPING
+
 .about {
   padding: 4rem 0;
   background: #fff;
+
   .about-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
   }
+
   .about-text {
     flex: 1 1 500px;
+
     h2 {
       font-size: 2.8rem;
       color: var(--primary-color);
       margin-bottom: 1rem;
       padding-top: 80px;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      border-right: 2px solid var(--primary-color);
+      animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite,
+        remove-cursor 0s ease 3s forwards;
     }
+
     p {
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
+      animation: fadeInUp 2s ease 3.2s both;
     }
+
     .btn-cv {
       padding: 0.8rem 1.8rem;
       background: var(--bg-gradient);
@@ -26,11 +40,14 @@
       border-radius: 50px;
       font-size: 1rem;
       transition: background 0.3s ease;
+      animation: fadeIn 2s ease 3.5s both;
+
       &:hover {
         background: var(--accent-color);
       }
     }
   }
+
   .about-image {
     flex: 1 1 350px;
     text-align: center;
@@ -46,15 +63,24 @@
   padding: 4rem 0;
   background: var(--body-bg);
   text-align: center;
+
   h2 {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: 2px solid var(--primary-color);
+    animation: typing 3s steps(35, end) forwards, blink 0.7s step-end infinite,
+      remove-cursor 0s ease 3s forwards;
   }
+
   .timeline {
     position: relative;
     margin: 0 auto;
     max-width: 1000px;
+
     &::before {
       content: "";
       position: absolute;
@@ -65,6 +91,7 @@
       background: var(--secondary-color);
       transform: translateX(-50%);
     }
+
     .timeline-item {
       position: relative;
       width: 45%;
@@ -73,22 +100,26 @@
       border-radius: 8px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
       margin: 1rem 0;
+
       &:nth-child(odd) {
         left: 0;
       }
       &:nth-child(even) {
         left: 55%;
       }
+
       .timeline-date {
         font-size: 0.9rem;
         font-weight: bold;
         color: var(--secondary-color);
         margin-bottom: 0.5rem;
       }
+
       h3 {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
       }
+
       p {
         font-size: 1rem;
       }
@@ -96,15 +127,59 @@
   }
 }
 
+// ANIMAZIONI GLOBALI
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes remove-cursor {
+  to {
+    border-right: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .about-wrapper {
     flex-direction: column;
   }
+
   .timeline .timeline-item {
     width: 100%;
     left: 0 !important;
     margin: 1rem 0;
   }
+
   .timeline::before {
     left: 20px;
   }

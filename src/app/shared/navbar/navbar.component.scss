@@ -1,3 +1,5 @@
+// ✅ NAVBAR MODERNA + RESPONSIVE ISPIRATA AD ADRIANA CON EFFETTO TYPING
+
 nav {
   position: fixed;
   top: 0;
@@ -20,6 +22,26 @@ nav {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--text-light);
+    width: 0;
+    animation: typing 2s steps(20, end) forwards, blink 0.7s step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 13ch; // Adatta alla lunghezza del nome
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
   }
 
   .nav-toggle {

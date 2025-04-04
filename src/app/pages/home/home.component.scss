@@ -34,7 +34,14 @@
       margin-bottom: 2rem;
       animation: fadeInUp 1.5s ease forwards;
     }
-
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      border-right: 2px solid var(--text-light); // cursore
+      animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite,
+        remove-cursor 0s ease 3s forwards; // ⬅️ qui
+    }
     .cta-btn {
       padding: 1rem 2rem;
       background: var(--bg-gradient);
@@ -83,6 +90,25 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 29ch; // Adatta questo valore alla lunghezza del tuo testo
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes remove-cursor {
+  to {
+    border-right: none;
   }
 }
 
