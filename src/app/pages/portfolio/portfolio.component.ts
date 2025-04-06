@@ -8,34 +8,34 @@ import { Component, OnInit } from '@angular/core';
 export class PortfolioComponent implements OnInit {
   progetti = [
     {
-      titolo: 'Progetto 1',
-      imgUrl: 'https://via.placeholder.com/400x300',
-      descrizione: 'Descrizione del primo progetto',
-      demo: 'https://demo-progetto1.it',
-      github: 'https://github.com/utente/progetto1',
+      titolo: 'DifoCostruzioni',
+      descrizione: 'Esperienza e innovazione per costruzioni di qualità 🏗️',
+      imgUrl: 'difocostruzioni.png',
+      demo: 'https://difocostruzioni.it',
+      github: 'https://github.com/Fedepera00',
     },
     {
-      titolo: 'Progetto 2',
-      imgUrl: 'https://via.placeholder.com/400x300',
-      descrizione: 'Descrizione del secondo progetto',
-      demo: 'https://demo-progetto2.it',
-      github: 'https://github.com/utente/progetto2',
+      titolo: 'SpotifyClone',
+      descrizione: 'Progettazione app desktop Spotify API 🎬',
+      imgUrl: 'spotify.png',
+      demo: 'https://spotifycloneteam4.netlify.app',
+      github: 'https://github.com/Rik991/Build-Week-2-Spotify.git',
     },
     {
-      titolo: 'Progetto 3',
-      imgUrl: 'https://via.placeholder.com/400x300',
-      descrizione: 'Descrizione del secondo progetto',
-      demo: 'https://demo-progetto2.it',
-      github: 'https://github.com/utente/progetto2',
+      titolo: 'Gestionale Patronato',
+      descrizione: 'Gestione pratiche, anagrafiche e fatture per patronato 🏛️',
+      imgUrl: 'Patronato.png',
+      demo: 'https://patronato360.it',
+      github: 'https://github.com/Fedepera00/patronato-gestionale',
     },
     {
-      titolo: 'Progetto 4',
-      imgUrl: 'https://via.placeholder.com/400x300',
-      descrizione: 'Descrizione del secondo progetto',
-      demo: 'https://demo-progetto2.it',
-      github: 'https://github.com/utente/progetto2',
+      titolo: 'To-do List ',
+      descrizione:
+        'Progetto personale per la gestione di una to-do list app 💼',
+      imgUrl: 'todolist.png',
+      demo: 'https://todoapprobot.netlify.app',
+      github: 'https://github.com/Fedepera00/S10-L5-EXAM-DAY.git',
     },
-    // Aggiungi altri progetti se necessario
   ];
 
   constructor() {}
